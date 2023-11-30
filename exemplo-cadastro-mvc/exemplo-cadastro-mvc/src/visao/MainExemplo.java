@@ -58,27 +58,31 @@ public class MainExemplo {
 			}
 			case 2: {
 				System.out.println("Digite o codigo da pessoa que deseja alterar:");
-				Pessoa n = new Pessoa();
 				Long cpf;
 				cpf = Long.valueOf(leitura.nextLine());
-				System.out.println("Digite o novo nome da pessoa");
-				n.setNome(leitura.nextLine());
-				bancoPessoa.alterar(n,cpf);
+				Pessoa p = new Pessoa();
+				System.out.println("Digite o novo nome:");
+				p.setNome(leitura.nextLine());
+				bancoPessoa.alterar(p,cpf);
+				// finalizar codigo
 				break;
 			}
 			case 3: {
 				System.out.println("Digite o codigo da pessoa que deseja excluir:");
 				Long cpf;
 				cpf = Long.valueOf(leitura.nextLine());
+				Pessoa n = new Pessoa();
 				bancoPessoa.excluir(cpf);
+				System.out.println("Pessoa excluída.");
+				break;
 			}
 			case 4: {
 				ArrayList<Pessoa> lista = bancoPessoa.listarPessoas();
 				for (Pessoa pessoa : lista) {
 					System.out.println("Cpf: " + pessoa.getCpf());
 					System.out.println("Nome: " + pessoa.getNome());
-					break;
 				}
+				break;
 			}
 
 			}
